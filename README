@@ -1,0 +1,25 @@
+ThEEditor - Better template editing in EE.
+Copyright (C) 2011  Matt Gilg
+	
+This plugin enables simple, clean, and robust editing within EE,
+and has a few features that make it stand on its own.
+	 - Syntax Highlighting of EE tags in HTML documents.
+	 - Automatic document-type detection for intelligent highlighting
+	   of html, css, javascript, and xml.
+	 - Javascript error checking and analysis. (inline js ee tags not supported yet)
+	 - A variety of editor themes.
+	 - Ctrl+Z bindings for Undo.
+	 - Shift-Tab reverse indent.
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
