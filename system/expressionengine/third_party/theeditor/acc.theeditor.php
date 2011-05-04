@@ -61,7 +61,7 @@ class Theeditor_acc
  	 * 
  	 * clouds, clouds_midnight, cobalt, dawn, eclipse, idle_fingers,
  	 * kr_theme, merbivore, merbivore_soft, mono_industrial, monokai,
- 	 * pastel_on_dark, twilight, vibrant_ink, text_mate
+ 	 * pastel_on_dark, twilight, vibrant_ink, textmate
  	 * 
  	 */
  	var $theme                  = 'pastel_on_dark';
