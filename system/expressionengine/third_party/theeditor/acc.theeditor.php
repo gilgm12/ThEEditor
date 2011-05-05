@@ -64,7 +64,7 @@ class Theeditor_acc
  	 * pastel_on_dark, twilight, vibrant_ink, textmate
  	 * 
  	 */
- 	var $theme                  = 'textmate';
+ 	var $theme                  = 'pastel_on_dark';
  	
 	//=========================================================================
 
