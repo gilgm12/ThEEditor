@@ -64,7 +64,7 @@ class Theeditor_acc
  	 * pastel_on_dark, twilight, vibrant_ink, textmate
  	 * 
  	 */
- 	var $theme                  = 'pastel_on_dark';
+ 	var $theme                  = 'textmate';
  	
 	//=========================================================================
 
@@ -128,6 +128,7 @@ class Theeditor_acc
 			// Update invisible placeholder.
     		theeditor.getSession().on('change',function(){
     			$("#template_data").text(theeditor.getSession().getValue());
+				$("#template_data").val(theeditor.getSession().getValue()); 
     		});
 		});				
 	</script>
@@ -225,4 +226,4 @@ END
 	
 	//=========================================================================	
 }
-/* Location: ./system/expressionengine/third_party/editee/acc.editee.php */ 
+/* Location: ./system/expressionengine/third_party/theeditor/acc.theeditor.php */
