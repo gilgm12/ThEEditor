@@ -113,7 +113,7 @@ class Theeditor_acc
     		var bg_color = $("#template_details").css("background-color");
     		var fg_color = $("#template_details").css("color");    		
     		$(".ace_gutter").css({"background-color":bg_color,"color":fg_color});
-
+						
     		// Set editor mode.
     		var mode = require("ace/mode/{$mode}").Mode;
     		theeditor.getSession().setMode(new mode());
@@ -121,23 +121,37 @@ class Theeditor_acc
     		$("#theeditor").resizable({
     			handles:"s",
     			resize: function(event, ui){
-    				theeditor.resize();
-    			}
-    		});
-
+    				resizeAccHandle(theeditor);    				   					
+    			}   			
+    		});			
+					
 			// Show TheEditor.
     		$("#markItUpTemplate_data").slideUp(function(){
-    			$("#theeditor").slideDown(function(){
-    				theeditor.renderer.onResize(true);		
+    			$("#theeditor").slideDown(function(){    				
+    				resizeAccHandle(theeditor);		
     			});
 			});
 
+			$("#theeditor").bind('resize',function(){
+				resizeAccHandle(theeditor);
+			});
+			
 			// Update invisible placeholder.
     		theeditor.getSession().on('change',function(){
     			$("#template_data").text(theeditor.getSession().getValue());
 				$("#template_data").val(theeditor.getSession().getValue()); 
     		});
-		});				
+		});		
+		
+		function resizeAccHandle(editor){
+			// Accomodate for resize bar when rendering.						
+			//editor.renderer.onResize(true);
+			editor.resize();			
+			var offset = $(".ui-resizable-s").height() / 2;
+			$("#theeditor").height($("div.ace_editor").height()+offset);		
+			$("")				
+		}
+				
 	</script>
 
 END
@@ -165,11 +179,14 @@ END
 		<style>
 			#theeditor{
 				position:relative; 
-				font-size:{$this->font_size}px;
-				border-bottom: 7px solid #ccc; 
+				font-size:{$this->font_size}px;																	
 			}
 			#templateEditor #theeditor{
 				border: none;
+			}						
+			.ui-resizable-s{																			
+				height: 12px;	
+				background: #ccc;						
 			}
 		</style>
 END
