@@ -144,12 +144,10 @@ class Theeditor_acc
 		});		
 		
 		function resizeAccHandle(editor){
-			// Accomodate for resize bar when rendering.						
-			//editor.renderer.onResize(true);
+			// Accomodate for resize bar when rendering.									
 			editor.resize();			
 			var offset = $(".ui-resizable-s").height() / 2;
-			$("#theeditor").height($("div.ace_editor").height()+offset);		
-			$("")				
+			$("#theeditor").height($("div.ace_editor").height()+offset);					
 		}
 				
 	</script>
