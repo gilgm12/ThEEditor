@@ -118,6 +118,13 @@ class Theeditor_acc
     		var mode = require("ace/mode/{$mode}").Mode;
     		theeditor.getSession().setMode(new mode());
 
+    		$("#theeditor").resizable({
+    			handles:"s",
+    			resize: function(event, ui){
+    				theeditor.resize();
+    			}
+    		});
+
 			// Show TheEditor.
     		$("#markItUpTemplate_data").slideUp(function(){
     			$("#theeditor").slideDown(function(){
@@ -159,6 +166,10 @@ END
 			#theeditor{
 				position:relative; 
 				font-size:{$this->font_size}px;
+				border-bottom: 7px solid #ccc; 
+			}
+			#templateEditor #theeditor{
+				border: none;
 			}
 		</style>
 END
@@ -175,6 +186,7 @@ END
 		<script src="{$this->ace_path}/ace.js" type="text/javascript" charset="utf-8"></script>
 		<script src="{$this->ace_path}/theme-{$this->theme}.js" type="text/javascript" charset="utf-8"></script>
 		<script src="{$this->ace_path}/mode-{$mode}.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"></script>
 END
 		);
 	}
